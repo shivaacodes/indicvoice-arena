@@ -9,13 +9,15 @@ jobs:
   web:
     name: Lint and Build (apps/web)
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/web
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -24,14 +26,14 @@ jobs:
           cache: pnpm
           cache-dependency-path: apps/web/pnpm-lock.yaml
 
-      - name: Setup pnpm
-        run: corepack enable
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        working-directory: apps/web
 
       - name: Lint
         run: pnpm lint
+        working-directory: apps/web
 
       - name: Build
         run: pnpm build
+        working-directory: apps/web
