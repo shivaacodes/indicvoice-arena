@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: IndicVoice Arena Repository
+    url: https://github.com/shivaacodes/indicvoice-arena
+    about: View code, docs, and open-source contribution guidelines.
+  - name: Contributing Guide
+    url: https://github.com/shivaacodes/indicvoice-arena/blob/main/CONTRIBUTING.md
+    about: Read contribution workflow and coding standards before opening issues.
